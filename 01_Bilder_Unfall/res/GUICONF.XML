@@ -1,0 +1,258 @@
+<ViewerBean>
+
+  <!-- ======================================================================== -->
+  <!-- GENERAL PROPERTIES                                                       -->
+  <!-- ======================================================================== -->
+  <!-- Available parameters                                                     -->
+  <!-- minimumHeapSize: Amount of Memory necessary for starting the application -->
+  <!-- allowAllMatrix: Matrix restriction                                       -->
+  <!-- annotationFontName: The font used for rendering textual overlays         -->
+  <!--                     (must be installed on the system).                   -->
+  <!-- annotationFontSize: Modifier for the font size used for overlays,        -->
+  <!--                     use html-style values like -5, -4, ... +4, +5        -->
+  <!-- annotationFontSmoothingEnabled: switches font smoothing on / off         -->
+  <!--                                                     ( true / false )     -->
+  <!-- cols: Standard number of columns (images)                                -->
+  <!-- defaultOrientationAnnotationVisible: Oientation of the image             -->
+  <!-- defaultPatientAnnotationVisible: Patient name and birthdate (top left)   -->
+  <!-- defaultRulerAnnotationVisible: Ruler on the image                        -->
+  <!-- defaultUserDefinedAnnotationVisible: User defined annotations            -->
+  <!-- dualMonitorLayoutEnabled: DualMonitor support                            -->
+  <!-- functionToolbarAlignment: 'NONE', 'LEFT' or 'RIGHT'                      -->
+  <!-- isCineModeEnabled: Cine mode panel                                       -->
+  <!-- leftMouseButtonAction: Standard value "102"                              -->
+  <!-- imageViewerMatrixRows: Standard value "1"                                -->
+  <!-- imageViewerMatrixColumns: Standard value "1"                             -->
+  <!-- paperPrintRendererDpi: DPI used for creating paper print jobs. Values    -->
+  <!--                        > 600 usually do not result in better printouts   -->
+  <!-- paperPrintJobPriority: Priority used when creating print job, value      -->
+  <!--                        range is 1...10, default is 5 (when not stated)   -->
+  <!-- pictorialIndexAlignment: 'NONE', 'TOP', 'DOWN', 'LEFT' or 'RIGHT'        -->
+  <!-- pictorialIndexSize: Size in pixel                                        -->
+  <!-- rows: Standard number of rows (images)                                   -->
+  <!-- convertModalityToStudy: (Retired) Uses HangingProtocls                   -->
+  <!--                      Defines some Modality Types displayed as one Study  -->
+  <!-- saveActionEnabled: if false changed can't be stored                      -->
+  <!-- resultTextActionEnabled: if false Result action is not available         -->
+  <!-- thumbnailRelativeMaxSize: Defines the size of the thumbnails created for -->
+  <!--                           the preview tree in "percent pixel of horiz.   -->
+  <!--                           screen size" Default value is "5.2"            -->
+  <!-- thumbnailRelativeMinSize: Default value is "3.2"                         -->
+  <!-- thumbnailTreeTooltipText: Infotext (ToolTip) for the pictorial index     -->
+  <!-- thumbnailTreeSeriesText: Infotext for the pictorial index on series level -->
+  <!-- thumbnailTreeStudyText: Infotext for the pictorial index on study level  -->
+  <!-- interpolationMode: Image interpolation: INTERPOLATION, SHARPENING,       -->
+  <!--                       PIXELREPLICATION                                   -->
+  <!-- imageNumbersVisible: switch to enable a display of the "jivex image nr." -->
+  <!--                       as a 'yellow' extra-annotation below the pattient  -->
+  <!--                       annotations.                                       -->
+  <!-- allowedScoutPlaneDeviation: Defines the max allowed deviation from the   -->
+  <!--                             expected 10 degree angle treshold for scout  -->
+  <!--                             image plane display calculation. See manual  -->
+  <!--                             for further instructions.                    -->
+  <!--                             Must be a value betw. 0.1 and 10.0           -->
+  <!-- ======================================================================== -->
+
+  <General
+    minimumHeapSize="120m"
+    allowAllMatrix="true"
+    rows="2"
+    cols="2"
+    defaultOrientationAnnotationVisible="true"
+    defaultPatientAnnotationVisible="true"
+    defaultRulerAnnotationVisible="true"
+    defaultUserDefinedAnnotationVisible="true"
+    functionToolbarAlignment="RIGHT"
+    isCineModeEnabled="true"
+    imageNumbersVisible="false"
+    leftMouseButtonAction="102"
+    imageViewerMatrixColumns="1"
+    imageViewerMatrixRows="1"
+    pictorialIndexAlignment="LEFT"
+    patientInfoText="${0010;0010}\n*${0010;0030}\n${0008;0060} ${0020;0013} / ${0020;0011}"
+    thumbnailRelativeMaxSize="5.2"
+    thumbnailRelativeMinSize="3.2"
+    thumbnailTreeTooltipText="${0010;0010}\n*${0010;0030}\nStudy ${0008;0020}\n${0008;0060}: ${0008;103e}"
+    interpolationMode="INTERPOLATION"/>
+
+
+
+  <!-- ======================================================================== -->
+  <!-- USER DEFINED IMAGE ANNOTATIONS                                           -->
+  <!-- ======================================================================== -->
+
+  <AnnotationDefinition>
+
+    <!-- ANNOTATIONS                                                            -->
+    <!-- ...................................................................... -->
+    <!-- Available parameters                                                   -->
+    <!-- modality: "*" for all modalities                                       -->
+    <!-- description: Textual description                                       -->
+    <!-- position: 'TOP_LEFT', 'TOP_RIGHT', 'BOTTOM_LEFT' or 'BOTTOM_RIGHT'     -->
+    <!-- separator: Optional textual separator like "x"                         -->
+    <!-- suffix: Optional textual suffix like "mm"                              -->
+    <!-- DicomAttribute tag: DICOM Tag which should be displayed                -->
+    <!-- ...................................................................... -->
+    <!-- TOP LEFT                                                               -->
+    <!-- Typically reserved for patient information                             -->
+    <!-- ...................................................................... -->
+
+    <!-- TOP RIGHT                                                              -->
+    <!-- Typically study information                                            -->
+    <Annotation modality="*" description="" position="TOP_RIGHT">
+      <DicomAttribute tag="(0008,0080)"/>
+    </Annotation>
+    <Annotation modality="*" description="Study" position="TOP_RIGHT" separator="-">
+      <DicomAttribute tag="(0008,0020)"/>
+      <DicomAttribute tag="(0008,0030)"/>
+    </Annotation>
+    <Annotation modality="*" description="" position="TOP_RIGHT">
+      <DicomAttribute tag="(0008,1030)"/>
+    </Annotation>
+
+    <!-- BOTTOM LEFT                                                            -->
+    <!-- Typically modality dependant information                               -->
+    <Annotation modality="MR" description="TR" position="BOTTOM_LEFT">
+      <DicomAttribute tag="(0018,0080)"/>
+    </Annotation>
+    <Annotation modality="MR" description="TE" position="BOTTOM_LEFT">
+      <DicomAttribute tag="(0018,0081)"/>
+    </Annotation>
+    <Annotation modality="CT" description="SP" position="BOTTOM_LEFT">
+      <DicomAttribute tag="(0020,1041)"/>
+    </Annotation>
+    <Annotation modality="CT" description="KV" position="BOTTOM_LEFT">
+      <DicomAttribute tag="(0018,0060)"/>
+    </Annotation>
+    <Annotation modality="CT" description="mAs" position="BOTTOM_LEFT">
+      <DicomAttribute tag="(0018,1151)"/>
+    </Annotation>
+    <Annotation modality="CT" description="GT" position="BOTTOM_LEFT">
+      <DicomAttribute tag="(0018,1120)"/>
+    </Annotation>
+    <Annotation modality="NM" description="CA" position="BOTTOM_LEFT">
+      <DicomAttribute tag="(0018,0070)"/>
+    </Annotation>
+
+    <!-- BOTTOM RIGHT                                                           -->
+    <!-- Typically series+image information                                     -->
+    <Annotation modality="*" description="SL" position="BOTTOM_RIGHT">
+      <DicomAttribute tag="(0018,0050)"/>
+    </Annotation>
+    <!-- ,,,,,,,,,,,,,,,,,,,,, -->
+    <!-- Image matrix in pixel -->
+    <!-- ,,,,,,,,,,,,,,,,,,,,, -->
+    <!-- <Annotation  modality="*" description="" position="BOTTOM_RIGHT" separator="x"> -->
+    <!--   <DicomAttribute tag="(0028,0011)" index="0"/> -->
+    <!--   <DicomAttribute tag="(0028,0010)" index="0"/> -->
+    <!-- </Annotation> -->
+    <!-- ,,,,,,,,,,,,,,,,,,,,, -->
+    <Annotation modality="*" description="" position="BOTTOM_RIGHT">
+      <DicomAttribute tag="(0020,4000)"/>
+    </Annotation>
+    <Annotation modality="*" description="" position="BOTTOM_RIGHT">
+      <DicomAttribute tag="(0008,103E)"/>
+    </Annotation>
+	
+	  <Annotation modality="*" description="" position="BOTTOM_LEFT" separator="">
+        <!--Image Laterality (0020,0062)-->
+        <DicomAttribute tag="(0020,0062)"/>
+        <!--View Position" (0018,5101)-->
+        <DicomAttribute tag="(0018,5101)"/>
+    </Annotation>
+	
+  </AnnotationDefinition>
+
+
+  <!-- ======================================================================== -->
+  <!-- USER DEFINED WINDOW/LEVEL PRESETS                                        -->
+  <!-- ======================================================================== -->
+
+  <UserDefinedPresets>
+    <!-- Windows Presets                                                        -->
+    <!-- Typically for CT in Hounsfield units                                   -->
+    <!-- ...................................................................... -->
+    <!-- Available parameters                                                   -->
+    <!-- name: Name of the presets                                              -->
+    <!-- modality: Modality for thsi preset                                     -->
+    <!-- width: Windows width                                                   -->
+    <!-- center: Windows center                                                 -->
+    <!-- ...................................................................... -->
+    <WindowPresets center="45" modality="CT" name="Abdomen" width="250"/>
+    <WindowPresets center="500" modality="CT" name="Bone" width="4000"/>
+    <WindowPresets center="-500" modality="CT" name="Bone" width="2000"/>
+    <WindowPreset center="45" modality="CT" name="Pelvis" width="300"/>
+  </UserDefinedPresets>
+
+
+  <HangingProtocolConfiguration>
+	<!-- Hanging Protocols                                                  -->
+    <!-- 												                    -->
+	<!-- .................................................................. -->
+    <!-- Criteria for each h.p.								                -->
+    <!-- modality: Modality for this h.p.                                   -->
+    <!-- studydescription: Study Description (whole descr.!)			    -->
+    <!-- 												                    -->
+    <!-- Actions:		    								                -->
+    <!-- DicomWindowPreset: Something like <WindowPreset center="45"  	    -->
+	<!--							 modality="CT" name="Pelvis"            -->
+	<!--							 width="300"/>			                -->
+	<!-- Window Offset: Offset to the current window settings,			    -->
+	<!--			  e.g. <WindowOffset offset="OFFS_100_50"			    -->
+	<!-- Zoom: Zoom factor, e.g. <Zoom factor="1.5">				        -->
+	<!-- Function Apply Mode: Constant out of the ViewerBeanConstants-class -->
+	<!-- 				  e.g. <ApplyMode mode="10"/> for "TOSERIES"	    -->
+	<!--				  "9" means "TO SELECTED [image]"			        -->
+    <!-- Convert Modality To Study: Creates one huge series out of many 	-->
+	<!-- 					 series from a study. e.g.:			            -->
+	<!--					 <ConvertModalityToStudy modality="true">       -->
+	<!-- Use Pixel Range As Window: Cannot be used with a Dicom Window 	    -->
+	<!--			Preset. E.g. <UseWindowPixelRange usePixelRange="true"  -->
+	<!-- Viewing Section Definition: Defines the matices of up to two 	    -->
+	<!--		Viewing Sections. 							                -->
+    <!-- .................................................................. -->
+
+      <HangingProtocolConfigurationValue alias="INITIAL" modality="*"
+            studydescription="*" useHangingProtocolAutomatically="true" >
+        <ApplyMode mode="10"/>
+        <ViewingSection cols="2" rows="1">
+          <ViewingSectionValue cols="1" rows="1"/>
+	   <ViewingSectionValue cols="1" rows="1"/>            
+        </ViewingSection>           
+      </HangingProtocolConfigurationValue>
+
+      <HangingProtocolConfigurationValue alias="NON_COMPARE" modality="*"
+          studydescription="*" useHangingProtocolAutomatically="false" >
+      <ApplyMode mode="10"/>
+      <ConvertModalityToStudy 
+        modality="true"/>
+      <ViewingSection cols="1" rows="1">
+        <ViewingSectionValue cols="1" rows="1"/>
+      </ViewingSection>
+    </HangingProtocolConfigurationValue>
+      
+      <HangingProtocolConfigurationValue 
+        modality="CR"
+        studydescription="*">
+        <ApplyMode 
+          mode="9"/>
+        <ConvertModalityToStudy 
+          modality="true"/>
+        <ViewingSection cols="1" rows="1">
+          <ViewingSectionValue cols="1" rows="1"/>
+        </ViewingSection>
+      </HangingProtocolConfigurationValue>
+      
+      <HangingProtocolConfigurationValue 
+        modality="ECG"
+        studydescription="*">
+        <ApplyMode 
+          mode="9"/>
+        <ConvertModalityToStudy 
+          modality="true"/>
+        <ViewingSection cols="1" rows="1">
+          <ViewingSectionValue cols="1" rows="1"/>
+        </ViewingSection>
+      </HangingProtocolConfigurationValue>      
+    </HangingProtocolConfiguration>
+  </ViewerBean>

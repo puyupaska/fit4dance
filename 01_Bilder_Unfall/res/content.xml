@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Root>
+	<Patient>
+		<property name="UID" value="1572349094487"/>
+		<property name="(0010,0020)" value="458271"/>
+		<property name="(0010,0030)" value="1970-12-14"/>
+		<property name="Source" value="../DICOM/PA000001"/>
+		<property name="(0010,0010)" value="van Luijn Susanne Heidi "/>
+		<Study>
+			<property name="NODEBYTESIZE" value="0"/>
+			<property name="occupation" value=""/>
+			<property name="archiveFlag" value="N"/>
+			<property name="fixedFlag" value="N"/>
+			<property name="referringPhysicianName" value="ZOU-AZNA Ambulanz "/>
+			<property name="numberOfStudyRelatedSeries" value="3"/>
+			<property name="patientsID" value="458271"/>
+			<property name="free2" value=""/>
+			<property name="actionStatus" value="OK"/>
+			<property name="(0008,0020)" value="29.1-0.-2019"/>
+			<property name="free3" value=""/>
+			<property name="free1" value=""/>
+			<property name="otherPatientsID" value=""/>
+			<property name="patientsSex" value="F"/>
+			<property name="modalityNames" value="CANON_CCR"/>
+			<property name="studyVerificationType" value="E"/>
+			<property name="studyVerificationFlag" value="N"/>
+			<property name="patientVerificationFlag" value="N"/>
+			<property name="UID" value="1.2.276.0.37.1.75.200408.1089765"/>
+			<property name="admittingDiagnosesDescription" value=""/>
+			<property name="(0008,1030)" value="Ganzer Fuß li 3EB"/>
+			<property name="observerName" value=""/>
+			<property name="jiveTenantID" value="1"/>
+			<property name="studyReceiveDateStart" value="29.10.2019 12:38:13"/>
+			<property name="studyTime" value="12:39:43"/>
+			<property name="patientsSize" value="0"/>
+			<property name="patientsBirthTime" value=""/>
+			<property name="SOURCE_SERVER_KEY" value="10.2.3.27"/>
+			<property name="mailAddressesFrom" value=""/>
+			<property name="Source" value="../DICOM/PA000001/ST000001"/>
+			<property name="accessionNumber" value="U-ID1089765"/>
+			<property name="JiveStudyData.jiveStudyDataID" value="1572349094489"/>
+			<property name="JivePatientData.jivePatientDataID" value="1572349094487"/>
+			<property name="patientsName" value="van Luijn Susanne Heidi "/>
+			<property name="archiveDate" value=""/>
+			<property name="studyID" value="858918"/>
+			<property name="studyErrorComment" value=""/>
+			<property name="studyStatus" value="CACHED"/>
+			<property name="modalitiesInStudy" value="DX"/>
+			<property name="studyDescription" value="Ganzer Fuß li 3EB"/>
+			<property name="studyInstanceUID" value="1.2.276.0.37.1.75.200408.1089765"/>
+			<property name="studyError" value="N"/>
+			<property name="patientsBirthDate" value="14.12.1970"/>
+			<property name="studyVerificationDate" value=""/>
+			<property name="studyVerificationName" value=""/>
+			<property name="studyReceiveDateEnd" value="29.10.2019 12:38:17"/>
+			<property name="patientsAge" value="048Y"/>
+			<property name="bytes" value="7350243"/>
+			<property name="numberOfStudyRelatedImages" value="3"/>
+			<property name="hasCaptures" value=""/>
+			<property name="studyDate" value="29.10.2019"/>
+			<Series>
+				<property name="NUM_OF_IMAGES_KEY" value="1"/>
+				<property name="NODEBYTESIZE" value="3547816"/>
+				<property name="SERIES_MODALITY_KEY" value="DX"/>
+				<property name="transferSyntax" value="1.2.840.10008.1.2.1"/>
+				<property name="sopClassUID" value="1.2.840.10008.5.1.4.1.1.1.1"/>
+				<property name="ExportJob.UsedFlavors" value="dicom"/>
+				<property name="KEY_IMAGES_KEY" value=""/>
+				<property name="Source" value="../DICOM/PA000001/ST000001/SE000001"/>
+				<property name="(0020,0011)" value="0001"/>
+				<property name="UID" value="1.3.46.670589.30.39.0.1.966169547795.1572349316771.1"/>
+				<property name="(0008,103E)" value="lat"/>
+				<property name="(0008,0021)" value="2019-10-29"/>
+				<property name="SERIES_NUMBER_KEY" value="1"/>
+			</Series>
+
+			<Series>
+				<property name="NUM_OF_IMAGES_KEY" value="1"/>
+				<property name="NODEBYTESIZE" value="3884384"/>
+				<property name="SERIES_MODALITY_KEY" value="DX"/>
+				<property name="transferSyntax" value="1.2.840.10008.1.2.1"/>
+				<property name="sopClassUID" value="1.2.840.10008.5.1.4.1.1.1.1"/>
+				<property name="ExportJob.UsedFlavors" value="dicom"/>
+				<property name="KEY_IMAGES_KEY" value=""/>
+				<property name="Source" value="../DICOM/PA000001/ST000001/SE000003"/>
+				<property name="(0020,0011)" value="0003"/>
+				<property name="UID" value="1.3.46.670589.30.39.0.1.966169547795.1572349318090.1"/>
+				<property name="(0008,103E)" value="schräg"/>
+				<property name="(0008,0021)" value="2019-10-29"/>
+				<property name="SERIES_NUMBER_KEY" value="3"/>
+			</Series>
+
+			<Series>
+				<property name="NUM_OF_IMAGES_KEY" value="1"/>
+				<property name="NODEBYTESIZE" value="3226512"/>
+				<property name="SERIES_MODALITY_KEY" value="DX"/>
+				<property name="transferSyntax" value="1.2.840.10008.1.2.1"/>
+				<property name="sopClassUID" value="1.2.840.10008.5.1.4.1.1.1.1"/>
+				<property name="ExportJob.UsedFlavors" value="dicom"/>
+				<property name="KEY_IMAGES_KEY" value=""/>
+				<property name="Source" value="../DICOM/PA000001/ST000001/SE000002"/>
+				<property name="(0020,0011)" value="0002"/>
+				<property name="UID" value="1.3.46.670589.30.39.0.1.966169547795.1572349317629.1"/>
+				<property name="(0008,103E)" value="ap"/>
+				<property name="(0008,0021)" value="2019-10-29"/>
+				<property name="SERIES_NUMBER_KEY" value="2"/>
+			</Series>
+
+		</Study>
+
+	</Patient>
+
+</Root>
