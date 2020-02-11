@@ -1,0 +1,52 @@
+Version des Viewers:
+====================
+mediDOK.EXE, Version R7 SP3 P12 HFII, Änderungsdatum 24. Juli 2018
+
+Änderungen:
+===========
+24.07.2018
+----------
+- Unterstützung weiterer DICOM-Bildformate
+
+06.06.2017
+----------
+- Unterstützung weiterer DICOM-Bildformate
+
+02.11.2016
+----------
+- Unterstützung von DICOM-Bildern, die in der Transfer-Syntax "Big Endian" vorliegen
+
+07.03.2016
+----------
+- Allgemeine Verbesserung der Anzeigequalität von DICOM-Bildern
+
+01.12.2015
+----------
+- Unterstützung weiterer DICOM-Bildformate
+
+16.10.2015
+----------
+- Bestimmte DICOM-Bilder mit Overlays, die als JPG-codiert sind, können jetzt angezeigt werden.
+
+27.08.2015
+----------
+- Verbesserung bei der Anzeige von Referenzlinien (R7 SP3 P4 HF1).
+
+28.07.2015
+----------
+- mediDOK.exe ist nun signiert.
+- Sandbox-Verzeichnis wurde geändert auf "%AllUsersProfile%\MDSandbox", da sont das Öffnen von PDF-Dokumenten nicht möglich war.
+
+Sonstiges:
+===========
+Zur Anzeige von PDF-Dateien im Viewer wird ein installierter PDF-Reader (z.B. Acrobat Reader) benötigt.
+
+
+Hersteller:
+===========
+mediDOK Software Entwicklungsgesellschaft mbH
+Handschuhsheimer Landstraße 11, D-69221 Dossenheim, Germany
+
+Phone: +49-6221-8768-0
+Homepage: www.medidok.de
+E-Mail: info@medidok.de
